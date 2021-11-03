@@ -9,9 +9,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("deployment_name", help="Name of the deployment")
     parser.add_argument(
-        "config_json",
-        help="Configuration file for the deployment",
-        default=os.path.join(os.getcwd(), "deployment_config.json")
+        "deployment_spec_json",
+        help="Deployment spec file",
+        default=os.path.join(os.getcwd(), "deployment_spec.json")
     )
     parser.add_argument(
         "bento_bundle_path",
@@ -20,5 +20,5 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     with open(args.config_json, 'r') as file:
-        deployment_config = json.loads(file.read())
-    update(args.deployment_name, deployment_config, args.bento_bundle_path)
+        deployment_spec = json.loads(file.read())
+    update(args.deployment_name, deployment_spec, args.bento_bundle_path)

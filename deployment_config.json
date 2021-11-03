@@ -1,1 +1,7 @@
-{}
+{
+    "project_name": "deployment_sample",
+    "system_requirments": {
+       "cpu": 2,
+       "memory": 400
+    }
+}
