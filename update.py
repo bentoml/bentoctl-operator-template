@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import argparse
 import json
 import os
@@ -8,9 +10,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("deployment_name", help="Name of the deployment")
     parser.add_argument(
-        "deployment_spec_json",
+        "config_json",
         help="Deployment spec file",
-        default=os.path.join(os.getcwd(), "deployment_spec.json"),
+        default=os.path.join(os.getcwd(), "deployment_config.json"),
+        nargs="?",
     )
     parser.add_argument("bento_bundle_path", help="Path to Bento bundle", default=None)
     args = parser.parse_args()
