@@ -12,10 +12,10 @@ The file structure of an operator should be similar to this. Lets look at the mo
 │   ├── describe.py
 │   ├── update.py
 │   └── delete.py
-├── deploy.py                  #2 - python scripts to do operations
-├── describe.py
-├── update.py
-├── delete.py
+├── deploy                     #2 - python scripts to do operations
+├── describe   
+├── update   
+├── delete   
 ├── deployment_config.json     #3 - sample config for the operator
 ├── operator_config.py         #4 - basic config for the operator
 └── README.md
@@ -23,7 +23,7 @@ The file structure of an operator should be similar to this. Lets look at the mo
 #1 [my_operator](./my_operator) - This module exposes the `deploy()`, `describe()`, `update()` and `delete()` functions that actually do these operations.
 
 #2 Python Script in the root dir - these can be called as scripts to carry out the operations
-eg: running `./deploy.py path/to/bento iristestdeployment deployment_config.json` will do the deployment operation.
+eg: running `./deploy path/to/bento iristestdeployment deployment_config.json` will do the deployment operation.
 
 #3 [deployment_config.json](./deployment_config.json) - the sample config for operators
 
