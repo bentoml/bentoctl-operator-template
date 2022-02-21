@@ -54,6 +54,10 @@ OPERATOR_SCHEMA = {
 }
 ```
 
+The `OPERATOR_SCHEMA` specfies the schema and data type for the configurable options. Bentoctl uses [Cerberus](https://docs.python-cerberus.org/en/stable/) for specifying and validation the schema for an operators configurable
+options. Reffer to the [validation rules](https://docs.python-cerberus.org/en/stable/validation-rules.html) for rules 
+that can be applyed.
+
 ## Setup
 
 This is a template repository for BentoML dpeloyment operator. To Create a new deployment operator:
