@@ -22,6 +22,10 @@ The file structure of an operator should be similar to this. Lets look at the mo
 ```
 #1 [my_operator](./my_operator) - This module exposes the `deploy()`, `describe()`, `update()` and `delete()` functions that actually do these operations.
 
+> Note: A good convention to use for naming operators is appending the module name with `bentoctl_`. This is to
+> avoid namespace clashes with other python modules when bentoctl loads the operator. Eg `bentoctl_lambda` for the 
+> lambda operator module.
+
 #2 Python Script in the root dir - these can be called as scripts to carry out the operations
 eg: running `./deploy path/to/bento iristestdeployment deployment_config.json` will do the deployment operation.
 
