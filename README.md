@@ -9,36 +9,28 @@ The file structure of an operator should be similar to this. Lets look at the mo
 .
 ├── my_operator                #1 - the operator module
 │   ├── __init__.py
-│   ├── deploy.py
-│   ├── describe.py
-│   ├── update.py
-│   └── delete.py
-├── deploy                     #2 - python scripts to do operations
-├── describe
-├── update
-├── delete
-├── deployment_config.json     #3 - sample config for the operator
-├── operator_config.py         #4 - basic config for the operator
+│   ├── create_deployable.py
+│   └── generate.py
+├── operator_config.py         #2 - basic config for the operator
 └── README.md
 ```
-#1 [my_operator](./my_operator) - This module exposes the `deploy()`, `describe()`, `update()` and `delete()` functions that actually do these operations.
+#1 [my_operator](./my_operator) - This module exposes the `generate()`, and `create_deployable()` functions
 
 > Note: A good convention to use for naming operators is appending the module name with `bentoctl_`. This is to
 > avoid namespace clashes with other python modules when bentoctl loads the operator. Eg `bentoctl_lambda` for the
 > lambda operator module.
 
-#2 Python Script in the root dir - these can be called as scripts to carry out the operations
-eg: running `./deploy path/to/bento iristestdeployment deployment_config.json` will do the deployment operation.
-
-#3 [deployment_config.json](./deployment_config.json) - the sample config for operators
-
-#4 [operator_config.py](./operator_config.py) - this contains the basic properties of the operator. This is accessed by the deployment tool. This container the operator name, the operator schema and the optional operator module path.
+#2 [operator_config.py](./operator_config.py) - this contains the basic properties of the operator. This is accessed by the deployment tool. This container the operator name, the operator schema and the optional operator module path.
 
 eg: lets see the sample operator_config file
 ```
 OPERATOR_NAME = 'bentoml_template'
 
 OPERATOR_MODULE_DIR= "my_operator"
+
+OPERATOR_DEFAULT_TEMPLATE = 'terraform'
+
+OPERATOR_AVAILABLE_TEMPLATES = ['terraform', 'kubernetes']
 
 # BentoML deployment tool use Cerberus to validate the input. The following is an example of the schema validation.
 OPERATOR_SCHEMA = {
