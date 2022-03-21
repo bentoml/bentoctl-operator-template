@@ -2,6 +2,7 @@
 Use this template as starting point for creating your own operators to carry out deployments.
 
 ## About
+This is a template for a Bentoctl deployment operator.
 
 The file structure of an operator should be similar to this. Lets look at the most important pieces.
 ```
@@ -13,9 +14,9 @@ The file structure of an operator should be similar to this. Lets look at the mo
 │   ├── update.py
 │   └── delete.py
 ├── deploy                     #2 - python scripts to do operations
-├── describe   
-├── update   
-├── delete   
+├── describe
+├── update
+├── delete
 ├── deployment_config.json     #3 - sample config for the operator
 ├── operator_config.py         #4 - basic config for the operator
 └── README.md
@@ -23,7 +24,7 @@ The file structure of an operator should be similar to this. Lets look at the mo
 #1 [my_operator](./my_operator) - This module exposes the `deploy()`, `describe()`, `update()` and `delete()` functions that actually do these operations.
 
 > Note: A good convention to use for naming operators is appending the module name with `bentoctl_`. This is to
-> avoid namespace clashes with other python modules when bentoctl loads the operator. Eg `bentoctl_lambda` for the 
+> avoid namespace clashes with other python modules when bentoctl loads the operator. Eg `bentoctl_lambda` for the
 > lambda operator module.
 
 #2 Python Script in the root dir - these can be called as scripts to carry out the operations
@@ -55,7 +56,7 @@ OPERATOR_SCHEMA = {
 ```
 
 The `OPERATOR_SCHEMA` specfies the schema and data type for the configurable options. Bentoctl uses [Cerberus](https://docs.python-cerberus.org/en/stable/) for specifying and validation the schema for an operators configurable
-options. Reffer to the [validation rules](https://docs.python-cerberus.org/en/stable/validation-rules.html) for rules 
+options. Reffer to the [validation rules](https://docs.python-cerberus.org/en/stable/validation-rules.html) for rules
 that can be applyed.
 
 ## Setup
@@ -63,5 +64,5 @@ that can be applyed.
 This is a template repository for BentoML dpeloyment operator. To Create a new deployment operator:
 
 1. Click "Use this template" button to start a new repository
-2. Update the `OPERATOR_NAME` and `OPERATOR_SCHEMA` in the `__init__.py` file
-3. Update the deployment functions in each file `deploy.py`, `update.py`, `describe.py` and `delete.py`
+2. Update the `OPERATOR_NAME`, `OPERATOR_SCHEMA` `OPERATOR_DEFAULT_TEMPLATE` in the `__init__.py` file
+

@@ -1,7 +1,5 @@
-from .delete import delete
-from .deploy import deploy
-from .describe import describe
-from .update import update
+from .generate import generate
+from .create_deployable import create_deployable
 
-__all__ = ["deploy", "update", "describe", "delete"]
 
+__all__ = [ "generate", "create_deployable" ]
