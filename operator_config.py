@@ -2,6 +2,10 @@ OPERATOR_NAME = 'bentoml_template'
 
 OPERATOR_MODULE_DIR= "my_operator"
 
+OPERATOR_DEFAULT_TEMPLATE = "terraform"
+
+OPERATOR_AVAILABLE_TEMPLATES = ["terraform"]
+
 # BentoML deployment tool use Cerberus to validate the input. The following is an example of the schema validation.
 OPERATOR_SCHEMA = {
     "project_name": {"type": "string"},
