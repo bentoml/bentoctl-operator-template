@@ -1,4 +1,4 @@
-def generate(name:str, spec:dict, template_type:str, values_only=False)-> str:
+def generate(name:str, spec:dict, destination_dir:str, template_type:str, values_only=False)-> str:
     """_summary_
 
     Args:
