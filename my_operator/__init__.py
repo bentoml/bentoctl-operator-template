@@ -1,6 +1,6 @@
 from .generate import generate
 from .create_deployable import create_deployable
-from .registry import get_registry_info
+from .registry import create_registry, destroy_registry
 
 
-__all__ = [ "generate", "create_deployable", "get_registry_info" ]
+__all__ = [ "generate", "create_deployable", "create_registry", "destroy_registry" ]
